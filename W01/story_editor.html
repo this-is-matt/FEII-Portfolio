@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Story Editor</title>
+  <script>
+    function loadStory() {
+      var storyName = document.getElementById('name').value;
+      var storyHTML = localStorage.getItem(storyName);
+      document.getElementById('storyEditor').value = storyHTML;
+    }
+    function saveStory() {
+      var storyName = document.getElementById('name').value;
+      var storyHTML = document.getElementById('storyEditor').value;
+      localStorage.setItem(storyName, storyHTML);
+    }
+    function displayStory() {
+      var storyHTML = document.getElementById('storyEditor').value;
+      document.getElementById('storyDisplay').innerHTML = storyHTML;
+    }
+  </script>
+
+  <style>
+    textarea {
+      width: 800px;
+      height: 250px;
+      background-color: lightyellow;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <h2>Story Writer</h2>
+    <label for="name">Story Name: <input id="name" placeholder="Story Name"></input></label>
+    <textarea id="storyEditor" placeholder="Story Goes Here"></textarea>
+    <div>
+      <button type="button" onclick="saveStory()">Save</button>
+      <button type="button" onClick="loadStory()">Load</button>
+      <button type="button" onclick="displayStory()">Display</button>
+    </div>
+    <div id="storyDisplay"></div>
+  </form>
+</body>
+
+</html>
