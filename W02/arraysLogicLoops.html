@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ch3: Arrays Logic and Loops</title>
+    <script src="js/all.js"></script>
+</head>
+
+<body>
+    <h2>Arrays</h2>
+    <p>In an array, you can delete the VALUE of one the value of an entry, but the position will remain. If it is called
+        again it will return the value of undefined.</p>
+    <p>Destructuring an array is the concept of taking values out of an array and presenting them as individual
+        values.<br>
+
+        Destructuring allows us to assign multiple values at the same time, using arrays:
+        "const [x,y] = [1,2];"</p>
+    <p>This can be used to swap variables: "[x,y] = [y,x];"</p>
+    <p>the length property is Mutable, changeable: "array.length = 8" is valid.</p>
+    <p>pop() removes the last element. it will return the value and then remove it from the array.</p>
+    <p> Shift() does the same thing but from the front.</p>
+    <p>push() appends a new value to the end and then returns the new length of the array.</p>
+    <p>unshift() is the same as push() but at the beginning.</p>
+    <p>... is the spread operator and can concatenate two or more arrays into a new one. THe spread operator can also be
+        used to flatten multidimensional arrays</p>
+    <P>The join() method can be used to turn the array into a string that comprises all the items in the array,
+        separated by commas or another deliminator if you put it in the ()</P><br>
+
+    <h2>Sets</h2>
+    <p> Sets are new, they are like an array but do not allow for duplicates. There is no literal notation to create a
+        set as of now, so a set constructor must be used: "const list = new Set();"</p>
+    <p>the add method must be used, again, no literal notation yet: "list.add(2).add(3).add(4);
+        Set { 1, 2, 3, 4 }"</p>
+    <p> an easier way to do this is through the use of an array: "const numbers = new
+        Set([1,2,3]);"</p>
+    <p>sets have methods. Here are some: size(), has(), delte(), clear()</p>
+    <p>spreads can be converted to an array with the spread operator. you can use the array.from() method as well.</p>
+    <p>can create memory efficient non-primitive data type sets with the weakSet() constuctor. these allow for garbage
+        collection (deleting references to removed arrays) while regualr sets do not. These do not accept primitive data
+        types.</p><br>
+</body>
+
+</html>
