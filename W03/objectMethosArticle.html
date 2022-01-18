@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Methods Article</title>
+    <script src="js/objectMethodsArticle.js"></script>
+</head>
+
+<body>
+    <h1>Object Methods Article</h1>
+    <a href="https://javascript.info/object-methods">Article</a>
+    <p>Objects often are created to represent real world objects like users, orders, etc.</p>
+    <p>let user = {<br>
+        name: "John",<br>
+        age: 30<br>
+        };</p>
+    <p>We can use functions to tell objects how to act. Functions tied to objects are called methods and are declared
+        like this:<br>
+        "objectName.functionName = function(){..."<br>
+        we can also call a method like this: "objectName.FunctionName();"</p>
+    <p>One can also declare methods through an object literal:</p>
+    <p>
+        user = {<br>
+        sayHi() { // same as "sayHi: function(){...}"<br>
+        alert("Hello");<br>
+        }<br>
+        };</p>
+    <p>Generally THe object literal notation is preferred.</p>
+    <h2>this.</h2>
+    <p>"this." is used to access the object and it's variables, methods, etc.: "this.name"</p>
+    <p> using "this" is more reliable than the alternative, which is to reference the out variable (object name)</p>
+    <p>"this." can be used in unbound function(not-methods) and when called by a method definition or something else withing the object it will work properly. </p>
+    <p>if a function is called that utilizes "this" outside of an object it will reference the global object(window in a browser). in strict mode it will throw an error.</p>
+    <p>"this" acts differently in arrow functions. Do more research if you intend to use it. It references the outer object.</p>
+    <p>More tasks in the article for more practice if you want.</p>
+</body>
+
+</html>
