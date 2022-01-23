@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <h1>Document Object Model</h1>
+    <p>"document." is a built in object.</p>
+    <p>getElementById() and others are methods.</p>
+    <p>In the DOM, white space is an empty text nodes.</p>
+    <p>body.nodetype will shows what type of node object the body is.</p>
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Type</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Element</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>attribute</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>text</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Comment</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>body</td>
+        </tr>
+    </table>
+    <p>There are other node types, but they aren't used in HTML.</p>
+    <p>Node Lists are array like, but they are not arrays. </p>
+    <p> node lists use index notation and the length method, but no other methods that arrays have.</p>
+    <p> simply use the Array.from() method to turn the node list into an array. Or the spread operator.([...document.images];)</p>
+    <p>getElementById, getElementsByTagName, GetElementsByClassName</p>
+    <p>querySelector() - first element that matches the css selector, and QuerySelectorAll() - returns node list of all elements with css selector</p>
+    <p>query selector methods can be used on any element. "ul.querySelector('li#bats')</p>
+    
+</body>
+</html>
