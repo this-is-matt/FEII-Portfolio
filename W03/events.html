@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1>Events</h1>
+    <p>Events are what changes the DOM.</p>
+    <p>document.body.addEventListener("click", doSomething); :syntax</p>
+    <p>"Click" is triggered when one taps, presses enter, or clicks with the mouse.</p>
+    <p>on the call back function, there should not be () after the function name. If there are the function will be called when the eventlistener is set, not when it is activated. </p>
+    <p>THere are many events that click be utilized in an event listener. if you need to listen for that event, it's likely there is an event for it.<br>
+    There are many events for touch screens. They are hard to implement. Avoid if possible?<br>
+    there is a removeEventListener() method. Don't use anonymus functions if you are goign to use this method<br>
+There is a preventDefualt() method. Probably don't use.<br>
+There are two types of propogation which can be chosen by the developer by adding a third parameter to the event listener of "true". THis triggeres capturing rather than bubble, which is the default.<br>
+One can stop bubbling propogation with event.stopPropogation() within the function.<br>
+Stoping can having unintended consequences however.<br>
+Can use event delegation to add event listeners to parent nodes. will need to use target to find the element that had the event.</p>
+<a href="indexW03.html">To see project, click here.</a>
+</body>
+
+</html>

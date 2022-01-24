@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Object Model</title>
 </head>
+
 <body>
     <h1>Document Object Model</h1>
     <p>"document." is a built in object.</p>
@@ -41,10 +43,30 @@
     <p>There are other node types, but they aren't used in HTML.</p>
     <p>Node Lists are array like, but they are not arrays. </p>
     <p> node lists use index notation and the length method, but no other methods that arrays have.</p>
-    <p> simply use the Array.from() method to turn the node list into an array. Or the spread operator.([...document.images];)</p>
+    <p> simply use the Array.from() method to turn the node list into an array. Or the spread
+        operator.([...document.images];)</p>
     <p>getElementById, getElementsByTagName, GetElementsByClassName</p>
-    <p>querySelector() - first element that matches the css selector, and QuerySelectorAll() - returns node list of all elements with css selector</p>
+    <p>querySelector() - first element that matches the css selector, and QuerySelectorAll() - returns node list of all
+        elements with css selector</p>
     <p>query selector methods can be used on any element. "ul.querySelector('li#bats')</p>
-    
+    <p>.childNodes returns all nodes, includeing empty text nodes. .Children returns ony children, meaning no empty text
+        nodes.</p>
+    <p>There are many other methodxs to grab various nodes. be aware that many grab empties</p>
+    <p>one can use dot notation to access attributes.</p>
+    <p>in dot notation call and for need to be className and htmlFor</p>
+    <p>classlist.add to avoid replacing all classes.</p>
+    <h2>Updating css</h2>
+    <p>superman.style.border this is how to update css. If the css has a hyehn in its name, instead type it in camel
+        case and it will work. </p>
+    <p>or like this: superman.style['background color']</p>
+    <p> to get a read-only list of the styles applied to an item use: getComputedStyle(). There are methods to help
+        filter it.</p>
+    <p>CHrome and other browsers don't allow the use of some methods. May cause an error. probably don't use it in any
+        actual code.</p>
+    <p> best pracrice is to either adjust the style dynamically or to update hte elements class and then add the class
+        to a stylesheet.</p>
+
+        <a href="indexW03.html">To see project, click here.</a>
 </body>
+
 </html>
