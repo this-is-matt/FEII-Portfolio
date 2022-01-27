@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Search</title>
+    <script src="js/search.js"></script>
+</head>
+
+<body>
+    <form name="search" action="/search">
+        <input name="searchInput" id="input">
+        <button type="submit">Search</button>
+        <p>What type of hero are you?</p>
+<label for='hero'>Hero:
+    <input type='radio' name='category' value='Hero' id='hero'>
+</label>
+<label for='villain'>Villain:
+    <input type='radio' name='category' value='Villain' id='villain'>
+</label>
+<label for='anti-hero'>Anti-Hero:
+    <input type='radio' name='category' value='Antihero' id='anti-hero'>
+</label>
+<label for='age'>Age:
+    <input type='number' id='age' name='age' min=0 step=1></label>
+    </form>
+    
+</body>
+
+</html>
