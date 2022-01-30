@@ -19,25 +19,35 @@
         Any extra methods and properties that need to be augmented to the class declaration after it’s been defined can be added to the prototype. These will be added to all instances, even those that have already been created. Add any properties or methods that are individual to a particular instance can be augmented using assignment to that object (a mixin could be used to add multiple properties at once, as we’ll see later).
         Be careful when overwriting the prototype completely ― the constructor class needs to be reset.<br>
         i don't quite understand the child classes use of Super. "super(name)" is inside of a constructor function, so how is it calling the parent classes constructor function? also, do you call a constuctor function with just a name? i don't get it.<br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-
-
-
+        getter and setter methods are valuable in controlling how data is stored in the object. For onstanve, we can validate data before storing it <br>
+        should be used with care. Defualt bahvior should be protected.<br>
+        can use an object as a prototype for other objects, thereby bypassing classes. origianl object functions just like a prototype, meaning it is live. syntax: const newObject = Object.create(PrototypeObject);<br>
     </p>
+    <h2>Mixins</h2>
+    <p>
+        mixins allows properties and methods of one object to be assigned to another.<br>
+        This is done with the object.assign() method. syntax: Object.assign(a,b)  object a recieves all of object b's attributes.<br>
+        this method will only make a shallow copy of arrays and ojbects however (point to the same plae in memory)<br>
+        we can make our own mixin() function so solve for this: <br><br>
+        function mixin(target,...objects) {<br>
+            for (const object of objects) {  <br> 
+            if(typeof object === 'object') {<br>
+                for (const key of Object.keys(object)) {<br>
+                    if (typeof object[key] === 'object') {<br>
+                    target[key] = Array.isArray(object[key]) ? [] : {};<br>
+                    mixin(target[key],object[key]);<br>
+                    } else {<br>
+                    Object.assign(target,object);  <br>
+                    }<br>
+                }<br>
+                }<br>
+            }<br>
+            return target;<br>
+        } <br>
+       <strong>How can you call a function within a function in the above function?</strong> <br>
+        mixins can be used to make copies of objects.<br>
+    </p>
+    <a href="indexOOP.html">Quiz Ninja game</a>
 </body>
 
 </html>
