@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>testing and debugging</h1>
+    <p>
+        Use strict mode in your JS because it make your code bettwer in every way.<br>
+        Use a self invoking function to encapsulate code that is added to someone elses code to avoid throwing errors on
+        someone elses code. <br>
+    </p>
+    <h2>Linting</h2>
+    <p>
+        Linting tools highlight and expose poorly formatted and error filled code. <br>
+        This helps to provide high quality code and to enforce style guides within a team.<br>
+        Can get an extension for this or an online linting tool.<br>
+        <br>
+        New methods are often unsopported, put it in an if statement if(window.method){} returns undefined by the
+        browser it won't cause an issue.<br>
+        Modernizr and Can I Use are both libraries that help.<br>
+        <br>
+        Debugging can be used from the ide, and the browser.<br>
+        <br>
+        console.trace(); can be used to see all functions that were called.<br>
+        <br>
+        <a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger">Firefox Debugger</a><br>
+        <a href="https://docs.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/">Edge Debugger</a><br>
+        <a href="https://developer.chrome.com/docs/devtools/">Chrome Debugger</a><br>
+        <a
+            href="https://developer.apple.com/library/archive/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Debugger/Debugger.html">Safari
+            Debugger</a><br>
+        <br>
+        Debugger keyword is used to send the console information. It also provides a breakpoint.<br>
+        <br>
+        Throwing errors can be done with native error objects, but we can also use the throw statement to create our own
+        errors. Throwing customized errors is more ideal than non-ideal responses like NaN as an output.<br>
+        <br>
+        Thrown errors terminate the program, which doesn't look too good. <br>
+        <br>
+        Try, Catch, Finally blocks are used to throw erros and handle them gracefully.<br>
+        <br>
+        Test Driven Development: write test first, then code:
+        1.Write tests (that initially fail)<br>
+        2.Write code to pass the tests<br>
+        3.Refactor the code<br>
+        4.Test refactored code<br>
+        5.Write more tests for new features<br>
+        <br>
+       Testing Frameworks: <br>
+        Jest, downloaded. cool syntax: test('square root of 4 is 2', () => {expect(squareRoot(4)).toBe(2);});<br>
+        Could be used by any function to test.<br>
+        if you navigate to the directory with the ______.test.js file in it and run "jest -c {}" in the termianl it will run the test script<br>
+        <br>
+        <br>
+    </p>
+</body>
+
+</html>
