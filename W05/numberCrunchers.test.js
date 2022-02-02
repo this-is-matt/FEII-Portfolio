@@ -40,10 +40,11 @@ test('10 is not prime', () => {
 });
 
 it('should throw an exception for non-numerical data', () => {
-    expect(factorsOf('twelve')).toThrow();
+    expect(()=>{factorsOf('twelve')}).toThrow();
 });
 
 //added Closing parenthesis because it was not closed and now it's not working. Not sure what the issue is. 
+//Was able to sort it out. I found the code in GitHUb and it was in a slightly different form. I basically added in a second arrow function that wasn't in the book. not sure why that solved the issue.
 
 it('should throw an exception for negative numbers', () => {
     expect(() => factorsOf(-2)).toThrow();
