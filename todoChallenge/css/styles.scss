@@ -1,0 +1,142 @@
+// colors
+$dark: #000000;
+$darkish: #2c2c2c78;
+$medium-dark: #054e6f;
+$medium-light:#7bd7c2;
+$lighter: #67c60a;
+$light-color: #ffd900;
+$light: #e9e9e9;
+
+//font
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,600;1,400;1,500;1,600&display=swap');
+
+$font: 'Asap', sans-serif;
+
+// container styling
+@mixin container($width: 2px, $color: $medium-dark, $radius: 10px) {
+    border: $width solid $color;
+    border-radius: $radius;
+    padding: .5rem;
+}
+
+
+//main setup
+body {
+    background-color: $dark;
+}
+
+main {
+    max-width: 600px;
+    margin: 2rem auto;
+    @include container(0px);
+    padding: 1rem;
+    color: $light;
+    background-color: $darkish;
+    font-family: $font;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.error {
+    display: none;
+    padding: 1rem;
+    @include container(3px, $light-color);
+    color: $light-color;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+}
+
+a{
+    color:$light;
+}
+button {
+    @include container(0);
+    color: $medium-light;
+    background-color:  $medium-dark;
+    font-weight: bold;
+}
+
+button:hover {
+    color: $medium-light;
+    background-color: $dark;
+}
+
+//tasklist
+.listContainer {
+    @include container(0);
+    max-width: 80%;
+    margin: 1rem 0;
+    background-color: $darkish;
+}
+
+.item:nth-child(even){
+    color:$medium-dark;
+}
+
+.item {
+    list-style: none;
+    // border-bottom: 1px solid $medium-light;
+    padding: .5rem 1rem;
+    margin: 0.25rem;
+    @include container(0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    color: $medium-light;
+}
+span{
+    color:$lighter;
+}
+
+//can i do this with Javascript? 
+// .item::before {
+//     content: "🔹 ";
+// }
+
+.item:hover {
+    background-color: $medium-light;
+    color: $medium-dark;
+}
+
+.check-btn {
+    border: none;
+    padding: 0;
+}
+
+.options {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+//form styling
+form {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+form {
+    input {
+        width: 317px;
+        @include container(0);
+        background-color: $light;
+        color: $medium-dark;
+        font-weight: bold;
+    }
+
+    button {
+        @include container(0);
+        background-color: $light;
+        color: $dark;
+    }
+    button:hover{
+        color: $lighter;
+    }
+}
