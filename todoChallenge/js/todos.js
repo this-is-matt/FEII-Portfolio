@@ -2,6 +2,7 @@ import {
     readFromLS,
     writeToLS
 } from "./ls.js";
+import { onTouch } from "./utilities.js";
 
 const todoObj = {
     id: '',
@@ -29,33 +30,85 @@ function getTodos() {
     var keys = Object.keys(localStorage);
     var i = keys.length;
     while (i--) {
-        list.push(readFromLS(keys[i]));
+        list.push(JSON.parse(readFromLS(keys[i])));
     };
     return list;
 }
+
 class Todo {
-    addTodo(listContainer, task) {
+    constructor(list, listContainer) {
+        this.renderTodoList(list, listContainer);
+    }
+    addTodo(task) {
         const input = task.value;
 
         SaveTodo(input);
 
-        const taskItem = document.createElement("p");
-        taskItem.setAttribute("class", "item")
-        taskItem.textContent = input;
-
-        listContainer.appendChild(taskItem);
-
-        const doneBtn = document.createElement('span');
-        taskItem.appendChild(doneBtn);
-        doneBtn.setAttribute("class", "doneBtn");
-        doneBtn.textContent = '✔';
-
+        // 
 
         //reset
         task.value = '';
         // want to add a pointer reset if i get time
     }
+    // }
+    renderTodoList(list, listContainer) {
+        //need to clear listcontainer
+        listContainer.textContent = "";
+        //step through list, grab content render it. 
+        list.forEach(element => {
+            const input = element.content;
+            const taskItem = document.createElement("li");
+            taskItem.setAttribute("class", "item");
+            taskItem.textContent = input;
+            listContainer.appendChild(taskItem);
+            const doneBtn = document.createElement('button');
+            taskItem.appendChild(doneBtn);
+            doneBtn.setAttribute("class", "doneBtn");
+            doneBtn.textContent = '✔';
+
+            onTouch(doneBtn, this.done, taskItem, doneBtn);
+        });
+
+        //add section to grab the length and send to screen
+    }
+    // itemClick(event, list) {
+    //     console.log(event.target);
+    //     // get item, check obj.completed, if false adjust obj.completed value to true, add element
+    //     // if true, adjust to false and remove element.
+
+    // }
+
+    //if there is a list of item, the last one won't delete.
+    //when i inout a task, it adds it to the localstorage, but not the DOM. Will add it if i refresh. will let me enter one before it breaks. 
+    done(taskItem, doneBtn){
+        taskItem.removeChild(doneBtn);
+        todoList.forEach(element =>{
+            if(element.content ===  taskItem.textContent){
+                const key = element.id;
+                localStorage.removeItem(key);
+                taskItem.remove(taskItem);
+            };
+            todoList = getTodos();
+
+        })
+    }
+
+
+    // taskfilter(){
+    // get button value
+    //case "all"
+    //show all 
+    //case active
+    //show only active
+    //case complted
+    // show only completed
+    // }
+
+
 };
 
 
-export default Todo;
+export {
+    Todo,
+    todoList
+};

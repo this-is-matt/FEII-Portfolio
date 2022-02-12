@@ -1,12 +1,11 @@
 function qs(string) {
- let item= document.querySelector(string) 
-    console.log(item);
+ let item = document.querySelector(string) 
 return item;
 }
 
-function onTouch(string, callback, param1, param2){
-    string.addEventListener('click', () => {
-    callback( param1, param2);
+function onTouch(btn, callback, param1, param2){
+    btn.addEventListener('click', () => {
+    callback(param1, param2);
     }); 
 }
 
