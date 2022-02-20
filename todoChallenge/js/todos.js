@@ -42,10 +42,7 @@ class Todo {
     addTodo(task) {
         const input = task.value;
 
-        SaveTodo(input);
-
-        // 
-
+        SaveTodo(input); 
         //reset
         task.value = '';
         // want to add a pointer reset if i get time
@@ -66,7 +63,7 @@ class Todo {
             doneBtn.setAttribute("class", "doneBtn");
             doneBtn.textContent = '✔';
 
-            onTouch(doneBtn, this.done, taskItem, doneBtn);
+            onTouch(doneBtn, this.del, taskItem, doneBtn);
         });
 
         //add section to grab the length and send to screen
@@ -80,10 +77,17 @@ class Todo {
 
     //if there is a list of item, the last one won't delete.
     //when i inout a task, it adds it to the localstorage, but not the DOM. Will add it if i refresh. will let me enter one before it breaks. 
-    done(taskItem, doneBtn){
-        taskItem.removeChild(doneBtn);
+    del(taskItem, doneBtn){
+        // taskItem.removeChild(doneBtn);
+        let content = taskItem.textContent;
+        // alert(content);
+        const iof = content.indexOf("✔")
+        // alert(iof);
+        content = content.slice(0,iof);
+        // alert(content);
+
         todoList.forEach(element =>{
-            if(element.content ===  taskItem.textContent){
+            if(element.content ===  content){
                 const key = element.id;
                 localStorage.removeItem(key);
                 taskItem.remove(taskItem);

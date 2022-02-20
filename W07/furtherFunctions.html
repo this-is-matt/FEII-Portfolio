@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Further Functions</title>
+</head>
+<body>
+    <h1>Further Functions</h1>
+    <ul>
+        <li>Functions have all the properties of other objects. .length, etc</li>
+        <li> you can use .this in a function. what ever you want .this to be referred to has to be the first argument passed when you call the function. other arguments after.</li>
+        <li>Memoization: we can cache responses if the function takes a long time to compute and then refer to the cached response rather than computing again.</li>
+        <li>
+            function square(x){ <br>
+                square.cache = square.cache || {};<br>
+                if (!square.cache[x]) {<br>
+                    square.cache[x] = x*x;<br>
+                }<br>
+                return square.cache[x]<br>
+            }<br>
+        </li>
+        <li>can call the cashed array with dot notation: square.cache;</li>
+        <h2>Immediately Invoked Function Expressions (iffe)</h2>
+        <li>These are used to keep code clean. They immediately run, therefore, their variable are used during runtime of the function, then they are dissolved with the completion fo the function. Keeps the namespace clean.</li>
+        <li>prototype: (functionName(){...})()</li>
+        <li>... So Mnay Parenthesis.</li>
+        <li>There is an easier way to swap values in JS. Destructuring</li>
+        <li>let [a,b] = [1,2];<br>
+            [a,b] = [b,a];<br>
+            <br>
+            a;<br>
+            << 2<br>
+            <br>
+            b;<br>
+            << 1<br>
+        </li>
+        <li>i don't understand how the self containing function works. I can see how one can redfine the function within itself, but how does it know to just run the first definition once? the example i am talking about is with the Unicorn method.</li>
+        <li>recursive functions call themselves until a certain criteria is met.</li>
+        <li>Asynchronous programming: JS is single threaded, but it can run asynchrounously by using the setTimeout() function.</li>
+        <li>THis can be understood more by looking into event-loops.</li>
+        <li>it's still single threaded though. so if you set the callback time too short it will still apply last.</li>
+        <li>Promise:</li>
+        <li>a promise is a way to deal with event loops in a more organized fashion. The promise takes two parameters. one is the fulfilled promise in the form of a function (resolve), and the other is a reject if the promise isn't fulfilled. </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+
+
+
+    </ul>
+</body>
+</html>
