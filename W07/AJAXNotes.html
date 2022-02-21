@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+<body>
+    <h1>Ajax</h1>
+    <ul>
+        <li>Ajax: Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web pages without reloading. This enables data to be sent and received in the background, as well as portions of a page to be updated in response to user events, while the rest of the program continues to run.</li>
+        <li>Ajax requires a server to run. because the point of Ajax is to gather webpages from another source (server).</li>
+        <li>AJAX:Asynchronous JavaScript and XML (although these days JSON is preferred over XML)</li>
+        <li>how to use fetch:
+            fetch('https://example.com/data')<br>
+.then( // code that handles the response )<br>
+.catch( // code that runs if the server returns an error )<br>
+        </li>
+        <li>when using fetch, the response object looks something like this: 
+            const response = new Response( 'Hello!', {<br>
+                ok: true,<br>
+                status: 200,<br>
+                statusText: 'OK',<br>
+                type: 'cors',<br>
+                url: '/api'<br>
+            });<br>
+        </li>
+        <li>we can also make our own respnse objects for testing or for senign data i guess.</li>
+        <li>HTTP Verbs or Methods such as GET or POST : <a href="
+            https://robm.me.uk/2013/09/http-verbs/" target="_blank" >article</a></li>
+        <li>one uses a constructor method to create a request object:<br>
+            const request = new Request('https://example.com/data', {<br>
+                method: 'GET',<br>
+                mode: 'cors',<br>
+                redirect: 'follow',<br>
+                cache: 'no-cache'<br>
+            });<br>
+        </li>
+        <li>Two examples:</li>
+        <li><a href="ajax.html">Ajax calls</a></li>
+        <li><a href="todo.html">todo - sends data and recieves a response</a></li>
+
+
+    </ul>
+</body>
+</html>

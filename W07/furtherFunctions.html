@@ -43,20 +43,40 @@
         <li>it's still single threaded though. so if you set the callback time too short it will still apply last.</li>
         <li>Promise:</li>
         <li>a promise is a way to deal with event loops in a more organized fashion. The promise takes two parameters. one is the fulfilled promise in the form of a function (resolve), and the other is a reject if the promise isn't fulfilled. </li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-
-
-
-
+        <li>Async Functions:</li>
+        <li>keywords: async - in front of "function"</li>
+        <li>await: in front of other async function calls. </li>
+        <li>Try: use a try catch block when using asynv function. </li>
+        <li>
+            async function loadGame(userName) {<br>
+                <br>
+                try {<br>
+                    const user = await login(userName);<br>
+                    const info = await getPlayerInfo (user.id);<br>
+                    // load the game using the returned info<br>
+                }<br>
+                <br>
+                catch (error){<br>
+                    throw error;<br>
+                }<br>
+            }<br>
+        </li>
+        <li>Good practice is to write Generalized functions for basic and common tasks that accept cal back functions for more specific uses.</li>
+        <li>can easily passmake function return other functions. Then assign the returned function to a variable, that variable would be the function name essentially. </li>
+        <li>a closure is when a variable is saved and avaialbe outside of it's origial loacal scope.</li>
+        <li>Generator functions create an iterator that iterates avery time the next() method is called against it. Instead of Return in these functions use Yield. Yield retains that last value it was assigned unil the next() is called again. Generators maintain their state until the program dies. </li>
+        <li>Functional Programming: PRograms that only use functions. Pure functions are important to this. </li>
+        <li>when using a higher order function we can use a shortcut: power(3)(5). This takes the returned function from the power function and then passes the argument: 5 to the fabircated function.</li>
+        <li>Currying is where a fucntion can pass a partially finished function if all paramters are not fulfilled when the function was intiially called.</li>
+        <li>curry function prototype:<br>
+            function curry(func,...oldArgs) {<br>
+                return function(...newArgs) {<br>
+                    const allArgs = [...oldArgs,...newArgs];<br>
+                    return func(...allArgs);<br>
+                }<br>
+            }<br>
+        </li>
+        <li>The principle of FUnctional programming are worth learning and implementing. At least in part. pure functions, keeping changes in state to a minimum.</li>
     </ul>
 </body>
 </html>
