@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas, SVG, and Drag and Drop</title>
+</head>
+<body>
+    <h1>Canvas, SVG, and Drag and Drop</h1>
+
+    <ul>
+        <li>width and height need to be set in the canvas element instead of with CSS because it defines the coordinate system.</li>
+        <li>the coordinate system is not cartesian. THe top left corner is (0,0)</li>
+        <li>toDataURL is how you can save a canvas image that you made.</li>
+        <li>You can connect the toDataURL with a button and a function.</li>
+        <li>function saveDrawing() {<br>
+            var canvas5 = document.getElementById("demo5");<br>
+            window.open(canvas5.toDataURL("image/png"));<br>
+        }</li>
+        <li>can use the canvas to alter images. getImageData() is good for this.</li>
+        <li>cant get images through local file. security error.</li>
+        <li>i feel like using canvas to convert images to grayscale would take a lot of resources. i think in most scenarios it would be better to just turn it to grayscale before implementing the image.</li>
+        <li>putImageData is the companion method.</li>
+        <li>you can clear what is in the canvas by restting the width and height.</li>
+        <li>canvas doesn't create DOM nodes, so it is not accessible.</li>
+        <li>SVG's are in XML file format and are more accessible because they can be searched.</li>
+        <li>Raphael is a JS library that helps with JS</li>
+        <li>Turns out the fect that Canvas doesn't write to the DOM makes it much faster. Better choice for a game or somethign that requires lots of animation.</li>
+        <li>Drag and Drop</li>
+        <li>I really like this. There is so many fun things that could be done with this.</li>
+        <li>you can use this to adjust elements that aren't even related to the the dragged item</li>
+        <li>prevent default is important for this</li>
+        <li>can grab the data about the dragged element with setData.</li>
+    </ul>
+</body>
+</html>
