@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validating Forms</title>
+</head>
+<body>
+    <ul>
+        <li>two types of client-sode validation: built in validation, and Javascript.</li>
+        <li>built in includes: required, minlength and maxlength. min and max, type, and regex patterns.</li>
+        <li>When an element is valid with built in it matches the :valid css pseudoclass, if the user submits, the breowser won't stop it.</li>
+        <li>The text area doesn't support a pattern attribute.</li>
+        <li>best practice for character length requriements is to use the attributes, but to also provide a character count using JS</li>
+        <h2>Validating using JS</h2>
+        <li>It's called the Constraint Validation API</li>
+        <li>This API affects the following elements: Button, fieldset, inout, output, select, textarea</li>
+        <li>The API makes the validationMessage, willvalidate, and Validity properties available for the above listed elements.</li>
+        <li>Validity returns an object with many properties, some of the common ones include tooLong, tooShort, typeMismatch, :invalid, etc.</li>
+        <li>There are various methods as well.</li>
+        <li><a href="fruit.html">fruit.html</a></li>
+    </ul>
+</body>
+</html>

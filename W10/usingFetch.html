@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Fetch</title>
+</head>
+<body>
+    <ul>
+        <li>The fetch API allows JS to access and manipulate parts of the HTTP pipeline, such as requests and responses.</li>
+        <li>It allows fetch() - a logical way to grab resources asynchronously</li>
+        <li>It's different from jquery.ajax in these ways: the promise returned won't reject on HTTP error status, won't send cross origin cookies.</li>
+        <li>Fetch basic example:</li>
+        <li>fetch('http://example.com/movies.json')<br>
+            .then(response => response.json()<br>)
+            .then(data => console.log(data));</li>
+        <li>The most basic fetch method just takes a paramater of the requested URL.</li>
+        <li>a second init paramter can be included that provides options to change various aspects. </li>
+        <li>See <a src="https://developer.mozilla.org/en-US/docs/Web/API/fetch">fetch()</a> for the full options available, and more details.</li>
+        <li>can use fetch to upload files, multiple files, </li>
+        <li>response.ok is used to check if the fetch was successful. Heres a common check:</li>
+        <li>fetch('flowers.jpg')<br>
+            .then(response => {<br>
+              <strong>if (!response.ok) {</strong><br>
+                throw new Error('Network response was not OK');<br>
+              }<br>
+              <return response.blob();<br>
+            })<br>
+            .then(myBlob => {<br>
+              myImage.src = URL.createObjectURL(myBlob);<br>
+            })<br>
+            .catch(error => {<br>
+              console.error('There has been a problem with your fetch operation:', error);<br>
+            });<br>
+          </li>
+        <li>One can make their own request object usign the request() method. THis allows you to set the same exact properties that fetch accpets. often used for testing. or potentially making your own API? </li>
+        <li><strong>What use cases are there for the request() method?</strong></li>
+        <li>one can create Headers as well, i don't know much about Headers.</li>
+        <li>can use headers to check content type of the response.</li>
+        <li>Repsonse objects are what is returned. Most common attributes are .ok, .status, .statusText</li>
+        <li>custom header objects and  many of the response properties are more useful for service workers.</li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>
